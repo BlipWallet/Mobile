@@ -25,17 +25,31 @@ export function HomeNavigator() {
             case "Home":
               return (
                 <MaterialCommunityIcon
-                  name={focused ? "home" : "home-outline"}
+                  name={focused ? "wallet" : "wallet-outline"}
                   size={size}
                   color={color}
                 />
               );
-            case "Blank":
+            case "Search":
               return (
                 <MaterialCommunityIcon
-                  name={
-                    focused ? "application-edit" : "application-edit-outline"
-                  }
+                  name={focused ? "magnify" : "magnify"}
+                  size={size}
+                  color={color}
+                />
+              );
+            case "Social":
+              return (
+                <MaterialCommunityIcon
+                  name={focused ? "account-group" : "account-group-outline"}
+                  size={size}
+                  color={color}
+                />
+              );
+            case "Settings":
+              return (
+                <MaterialCommunityIcon
+                  name={focused ? "cog" : "cog-outline"}
                   size={size}
                   color={color}
                 />
@@ -45,7 +59,9 @@ export function HomeNavigator() {
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Blank" component={BlankScreen} />
+      <Tab.Screen name="Search" component={BlankScreen} />
+      <Tab.Screen name="Social" component={BlankScreen} />
+      <Tab.Screen name="Settings" component={BlankScreen} />
     </Tab.Navigator>
   );
 }
