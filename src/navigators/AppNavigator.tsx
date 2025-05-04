@@ -35,6 +35,8 @@ import {
 type RootStackParamList = {
   Home: undefined;
   Settings: undefined;
+  Onboarding: undefined;
+  Login: undefined;
   // 🔥 Your screens go here
 };
 
@@ -49,7 +51,17 @@ const Stack = createNativeStackNavigator();
 
 const AppStack = () => {
   return (
-    <Stack.Navigator initialRouteName={"Home"}>
+    <Stack.Navigator initialRouteName={"Onboarding"}>
+      <Stack.Screen
+        name="Onboarding"
+        component={Screens.OnboardingScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Login"
+        component={Screens.LoginScreen}
+        options={{ headerShown: false }}
+      />
       <Stack.Screen
         name="HomeStack"
         component={HomeNavigator}
